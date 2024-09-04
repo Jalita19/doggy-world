@@ -1,5 +1,3 @@
-// api.js
-
 const catApiKey = 'live_kBH2gxfvfLNN7Q1I3ZhWtKvh5MnM4LgoJFgES871kQxk1oIN68CwyRYr6r6cNJNL'; // Replace with your actual API key
 const dogApiKey = 'live_NvKMkUFyFkfA2zmeSglz5LemZ8dc57GuWUA3cgCC786vWReJ0nAVpA6F9t3n2oYi'; // Replace with your actual API key
 const catBaseUrl = 'https://api.thecatapi.com/v1/';

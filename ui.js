@@ -1,5 +1,3 @@
-// ui.js
-
 export function populateSelectElement(selectElement, breeds) {
     selectElement.innerHTML = '<option value="">Select Breed</option>';
     breeds.forEach(breed => {
