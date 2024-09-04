@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat and Dog Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cat and Dog Gallery</h1>
+    </header>
+    <main>
+        <!-- Cat Gallery Section -->
+        <section id="cat-gallery">
+            <button id="random-cat-btn">Show Random Cat</button>
+            <select id="breed-select-gallery">
+                <option value="">Select Breed</option>
+            </select>
+            <div id="cat-container-gallery"></div>
+        </section>
+        
+        <!-- Dog Gallery Section -->
+        <section id="dog-gallery">
+            <button id="random-dog-btn">Show Random Dog</button>
+            <select id="breed-select-dog">
+                <option value="">Select Breed</option>
+            </select>
+            <div id="dog-container-gallery"></div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section id="favorites-gallery">
+            <h2>Favorites</h2>
+            <div id="favorites-container-gallery"></div>
+        </section>
+        
+        <!-- Search and Pagination Section -->
+        <section id="search-and-pagination">
+            <input type="text" id="search-bar" placeholder="Search for cats or dogs..." />
+            <button id="search-btn">Search</button>
+            <select id="breed-select-search">
+                <option value="">Select Breed</option>
+            </select>
+            <div id="cat-container-search"></div>
+            <div id="pagination">
+                <button id="prev-page" disabled>Previous</button>
+                <span id="page-info">Page 1</span>
+                <button id="next-page">Next</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cat and Dog Gallery</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

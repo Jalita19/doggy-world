@@ -1,0 +1,53 @@
+/* Existing styles */
+
+#cat-gallery, #dog-gallery {
+    margin-top: 20px;
+}
+
+#cat-container-gallery img, #dog-container-gallery img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+#favorites-gallery {
+    margin-top: 20px;
+}
+
+#favorites-container-gallery img {
+    width: 100%;
+    max-width: 150px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#favorites-container-gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#search-and-pagination {
+    margin-top: 20px;
+}
+
+#cat-container-search img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+#pagination {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+}
+
