@@ -3,56 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat and Dog Gallery</title>
+    <title>Cat and Dog Lover's Corner</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Cat and Dog Gallery</h1>
+        <h1>Cat and Dog Lover's Corner</h1>
+        <nav>
+            <ul>
+                <li><a href="#cats">Cats</a></li>
+                <li><a href="#dogs">Dogs</a></li>
+            </ul>
+        </nav>
+        </section>
     </header>
-    <main>
-        <!-- Cat Gallery Section -->
-        <section id="cat-gallery">
-            <button id="random-cat-btn">Show Random Cat</button>
-            <select id="breed-select-gallery">
-                <option value="">Select Breed</option>
-            </select>
-            <div id="cat-container-gallery"></div>
-        </section>
-        
-        <!-- Dog Gallery Section -->
-        <section id="dog-gallery">
-            <button id="random-dog-btn">Show Random Dog</button>
-            <select id="breed-select-dog">
-                <option value="">Select Breed</option>
-            </select>
-            <div id="dog-container-gallery"></div>
-        </section>
-
-        <!-- Favorites Section -->
-        <section id="favorites-gallery">
-            <h2>Favorites</h2>
-            <div id="favorites-container-gallery"></div>
-        </section>
-        
-        <!-- Search and Pagination Section -->
-        <section id="search-and-pagination">
-            <input type="text" id="search-bar" placeholder="Search for cats or dogs..." />
-            <button id="search-btn">Search</button>
-            <select id="breed-select-search">
-                <option value="">Select Breed</option>
-            </select>
-            <div id="cat-container-search"></div>
-            <div id="pagination">
-                <button id="prev-page" disabled>Previous</button>
-                <span id="page-info">Page 1</span>
-                <button id="next-page">Next</button>
+    
+    <section id="cats">
+        <h2>Meet the Cats</h2>
+        <div class="content">
+            <div class="card">
+                <img src="https://thecatapi.com/api/images/get?format=src&type=gif/300/200" alt="Cute Cat 1">
+                <h3>Cute Cat 1</h3>
+                <p>This is a description of Cute Cat 1. Isn’t it adorable?</p>
             </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Cat and Dog Gallery</p>
+            <div class="card">
+                <img src="https://thecatapi.com/api/images/get?format=src&type=gif/301/200" alt="Cute Cat 2">
+                <h3>Cute Cat 2</h3>
+                <p>This is a description of Cute Cat 2. So fluffy!</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="dogs">
+        <h2>Meet the Dogs</h2>
+        <div class="content">
+            <div class="card">
+                <img src="https://placedog.net/300/200" alt="Cute Dog 1">
+                <h3>Cute Dog 1</h3>
+                <p>This is a description of Cute Dog 1. Simply lovable!</p>
+            </div>
+            <div class="card">
+                <img src="https://placedog.net/301/200" alt="Cute Dog 2">
+                <h3>Cute Dog 2</h3>
+                <p>This is a description of Cute Dog 2. Such a playful companion!</p>
+            </div>
+        </div>
+    </section>
+    <section id="create-post">
+        <h2>Create a New Post</h2>
+        <form id="createPostForm">
+            <input type="text" id="postTitle" placeholder="Title" required>
+            <textarea id="postBody" placeholder="Body" required></textarea>
+            <button type="submit">Create Post</button>
+        </form>
+    </section>
+
+    <section id="update-post">
+        <h2>Update an Existing Post</h2>
+        <form id="updatePostForm">
+            <input type="number" id="postId" placeholder="Post ID" required>
+            <input type="text" id="updateTitle" placeholder="New Title" required>
+            <textarea id="updateBody" placeholder="New Body" required></textarea>
+            <button type="submit">Update Post</button>
+        </form>
+    </section>
+<footer>
+        <p>&copy; 2024 Cat and Dog Lover's Corner. All rights reserved.</p>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
+</html> -->
+
+    
+
+    
