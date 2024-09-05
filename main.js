@@ -1,8 +1,18 @@
-// main.js
-import { fetchCatBreeds, fetchDogBreeds, fetchRandomCat, fetchRandomDog, searchCats, searchDogs } from './api.js';
-import { populateSelectElement, displayImage, addEventListeners } from './ui.js';
+import { 
+    fetchCatBreeds, 
+    fetchDogBreeds, 
+    fetchRandomCat, 
+    fetchRandomDog, 
+    searchCats, 
+    searchDogs,
+    fetchPetImages 
+} from './api.js';
+
+// Assuming these functions are defined in ui.js
+import { populateSelectElement, addEventListeners } from './ui.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
+    // Select DOM elements
     const catSelectElement = document.getElementById('breed-select-gallery');
     const dogSelectElement = document.getElementById('breed-select-dog');
     const catContainer = document.getElementById('cat-container-gallery');
@@ -14,7 +24,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const prevPageBtn = document.getElementById('prev-page');
     const nextPageBtn = document.getElementById('next-page');
     const pageInfo = document.getElementById('page-info');
-
+    const loadMoreButton = document.getElementById('load-more');
+    const contentContainer = document.getElementById('content-container');
+    
     // Fetch and populate breed options
     const catBreeds = await fetchCatBreeds();
     const dogBreeds = await fetchDogBreeds();
@@ -37,4 +49,31 @@ document.addEventListener('DOMContentLoaded', async () => {
         nextPageBtn: nextPageBtn,
         pageInfo: pageInfo
     });
+
+    // Handle load more button click
+    let page = 1;
+    loadMoreButton.addEventListener('click', async () => {
+        page++;
+        try {
+            const data = await fetchPetImages(); // Fetch images
+            if (!data.pets || data.pets.length === 0) {
+                alert('No more pets to load.');
+                return;
+            }
+            data.pets.forEach(pet => {
+                const petElement = document.createElement('div');
+                petElement.className = 'pet-card';
+                petElement.innerHTML = `
+                    <img src="${pet.imageUrl}" alt="${pet.name}">
+                    <h3>${pet.name}</h3>
+                    <p>${pet.description}</p>
+                `;
+                contentContainer.appendChild(petElement);
+            });
+        } catch (error) {
+            console.error('Error loading more pets:', error);
+            alert('Failed to load more pets. Please try again.');
+        }
+    });
 });
+

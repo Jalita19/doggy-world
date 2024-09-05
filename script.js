@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const createPostForm = document.querySelector('#createPostForm');
     const updatePostForm = document.querySelector('#updatePostForm');
+    const loadMoreButton = document.getElementById('load-more');
+    const contentContainer = document.getElementById('content-container');
+    let page = 1; // Assuming you want to load data in pages
 
     // Function to create a new post using async/await
     async function createPost(title, body) {
@@ -72,6 +75,40 @@ document.addEventListener('DOMContentLoaded', () => {
             await updatePost(id, title, body); // Await the result of updatePost
         } else {
             alert('Post ID, Title, and Body are required.');
+        }
+    });
+
+    // Handle load more button click
+    loadMoreButton.addEventListener('click', async () => {
+        page++;
+
+        // Fetch new data
+        try {
+            const response = await fetch(`"https://thecatapi.com/api/images/get?format=src&type=gif/300/200"`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            if (data.pets.length === 0) {
+                alert('No more pets to load.');
+                return;
+            }
+
+            // Process and display the new data
+            data.pets.forEach(pet => {
+                const petElement = document.createElement('div');
+                petElement.className = 'pet-card';
+                petElement.innerHTML = `
+                    <img src="${pet.imageUrl}" alt="${pet.name}">
+                    <h3>${pet.name}</h3>
+                    <p>${pet.description}</p>
+                `;
+                contentContainer.appendChild(petElement);
+            });
+        } catch (error) {
+            console.error('Error loading more pets:', error);
+            alert('Failed to load more pets. Please try again.');
         }
     });
 });
