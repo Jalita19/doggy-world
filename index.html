@@ -57,7 +57,46 @@
         </select>
         <button id="load-more">Load More</button>
     </section>
+    <section>
+        <div>
+            <h2>Cat Gallery</h2>
+            <button id="random-cat-btn">Random Cat</button>
+            <select id="breed-select-gallery">
+                <!-- Options will be populated dynamically -->
+            </select>
+            <div id="cat-container-gallery" class="gallery-container">
+                <!-- Cat images will be displayed here -->
+            </div>
+        </div>
 
+        <div>
+            <h2>Dog Gallery</h2>
+            <button id="random-dog-btn">Random Dog</button>
+            <select id="breed-select-dog">
+                <!-- Options will be populated dynamically -->
+            </select>
+            <div id="dog-container-gallery" class="gallery-container">
+                <!-- Dog images will be displayed here -->
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Favorites</h2>
+        <div id="favorites-container-gallery" class="gallery-container">
+            <!-- Favorite images will be displayed here -->
+        </div>
+    </section>
+
+    <section>
+        <h2>Search</h2>
+        <input type="text" id="search-bar" placeholder="Search for pets">
+        <button id="search-btn">Search</button>
+        <div id="cat-container-search" class="gallery-container">
+            <!-- Search results will be displayed here -->
+        </div>
+    </section>
+<section>
     <div id="gallery" class="gallery">
         <!-- Images will be dynamically inserted here -->
     </div>
@@ -79,11 +118,18 @@
             <button type="submit">Update Post</button>
         </form>
     </section>
+    <section>
+        <button id="prev-page">Previous Page</button>
+        <span id="page-info">Page 1</span>
+        <button id="next-page">Next Page</button>
+    </section>
 <footer>
         <p>&copy; 2024 Cat and Dog Lover's Corner. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
     <script type="module" src="gallery.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="api.js"></script>
 </body>
 </html> -->
 
